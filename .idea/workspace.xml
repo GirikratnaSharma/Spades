@@ -4,8 +4,11 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="4d1ff344-0126-41b8-b074-b17bc498b6c9" name="Changes" comment="Changes2">
+    <list default="true" id="4d1ff344-0126-41b8-b074-b17bc498b6c9" name="Changes" comment="Checking the VGG Architecture">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/images/asterix.jpg" beforeDir="false" afterPath="$PROJECT_DIR$/images/content.jpg" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/main.py" beforeDir="false" afterPath="$PROJECT_DIR$/main.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/style_transfer.py" beforeDir="false" afterPath="$PROJECT_DIR$/style_transfer.py" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -81,7 +84,15 @@
       <option name="project" value="LOCAL" />
       <updated>1738388544260</updated>
     </task>
-    <option name="localTasksCounter" value="3" />
+    <task id="LOCAL-00003" summary="Checking the VGG Architecture">
+      <option name="closed" value="true" />
+      <created>1738389827550</created>
+      <option name="number" value="00003" />
+      <option name="presentableId" value="LOCAL-00003" />
+      <option name="project" value="LOCAL" />
+      <updated>1738389827550</updated>
+    </task>
+    <option name="localTasksCounter" value="4" />
     <servers />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
@@ -98,6 +109,7 @@
   <component name="VcsManagerConfiguration">
     <MESSAGE value="Changes" />
     <MESSAGE value="Changes2" />
-    <option name="LAST_COMMIT_MESSAGE" value="Changes2" />
+    <MESSAGE value="Checking the VGG Architecture" />
+    <option name="LAST_COMMIT_MESSAGE" value="Checking the VGG Architecture" />
   </component>
 </project>
