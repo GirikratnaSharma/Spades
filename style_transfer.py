@@ -28,7 +28,7 @@ def load_image(image_path, max_size=400):
 
 # Compute Gram Matrix for Style Loss
 def gram_matrix(tensor):
-    B, C, H, W = tensor.shape
+    B, C, H, W = tensor.shape  # Fix: Ensure input is 4D
     tensor = tensor.view(C, H * W)  # Flatten feature map
     return torch.mm(tensor, tensor.t())  # Compute Gram matrix
 
@@ -54,7 +54,7 @@ def get_features(image, model):
             if layer_name == "conv4_1":
                 content_features['content'] = x
             else:
-                style_features[layer_name] = gram_matrix(x)
+                style_features[layer_name] = x  # ✅ Keep as feature map, compute Gram matrix later
 
     return content_features, style_features
 
@@ -73,10 +73,10 @@ class ContentLoss(nn.Module):
 class StyleLoss(nn.Module):
     def __init__(self, target):
         super(StyleLoss, self).__init__()
-        self.target = target.detach()
+        self.target = gram_matrix(target).detach()  # ✅ Compute Gram Matrix here
 
     def forward(self, input):
-        gram_input = gram_matrix(input)
+        gram_input = gram_matrix(input)  # ✅ Compute Gram Matrix here
         return torch.mean((gram_input - self.target) ** 2)
 
 
@@ -109,7 +109,7 @@ def style_transfer(content_path, style_path, num_steps=500, alpha=1, beta=1e6):
 
         # Compute Losses
         c_loss = content_loss(gen_content_features['content'])
-        s_loss = sum(style_losses[layer](gen_style_features[layer]) for layer in style_losses)
+        s_loss = sum(style_losses[layer](gen_style_features[layer]) for layer in style_losses)  # ✅ Style loss now works
 
         # Total Loss
         total_loss = alpha * c_loss + beta * s_loss
