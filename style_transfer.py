@@ -130,5 +130,5 @@ def style_transfer(content_path, style_path, num_steps=500, alpha=1, beta=1e6):
 
 # Run NST
 if __name__ == "__main__":
-    output = style_transfer("images/content.jpg", "images/style.jpg", num_steps=500)
+    output = style_transfer("images/content.jpg", "images/style.jpg", num_steps=1000)
     output.save("images/output.jpg")
